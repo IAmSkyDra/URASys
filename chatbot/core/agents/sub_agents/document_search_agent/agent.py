@@ -96,7 +96,7 @@ def create_agent(query_index: int, query: Optional[str] = None) -> LlmAgent:
     agent = LlmAgent(
         name="document_search_agent",
         model="gemini-2.5-flash",
-        description="Document search agent to find relevant documents about HCMUT.",
+        description="Document search agent to find relevant documents.",
         instruction=instruction.format(max_retries=MAX_RETRIES),
         tools=[MCPToolset(connection_params=SseConnectionParams(url="http://document-server:8000/sse"))],
         before_model_callback=setup_before_model_call,

@@ -1,17 +1,16 @@
-# Agentic HCMUT University Admission chatbot
+# URASys
+Welcome to the official repository for **URASys**.
 
-Hi 👋 Welcome to the official repository for our **Agentic HCMUT University Admission Chatbot**!  
+---
 
-This project aims to build an intelligent, agentic chatbot to assist prospective students with information about Ho Chi Minh City University of Technology (HCMUT). The chatbot can answer questions regarding admission requirements, academic programs, campus facilities, application procedures, scholarships, and other university-related inquiries. By leveraging advanced NLP and RAG (Retrieval-Augmented Generation) technologies, our system provides accurate and helpful responses based on the university's official documentation and data.
+## 🚀 Key Features
 
-**Features** ✨
-- **Accurate Information Retrieval**: Answers questions using verified university data and documents
-- **Vietnamese Language Support**: Optimized for both Vietnamese and English queries
-- **Context-Aware Responses**: Maintains conversation context for more natural interactions
-- **Semantic Search**: Uses advanced embedding techniques to understand question intent
-- **Agentic Capabilities**: Can reason through complex multi-step questions about admissions
+- **Verified Data Retrieval**: Provides answers drawn from curated FAQs, official policy documents, and program brochures.  
+- **Bilingual Support**: Fully optimized for both English and Vietnamese questions and responses.  
+- **Context-Aware Dialogue**: Maintains conversational context to handle follow-up inquiries naturally.  
+- **Semantic Search Engine**: Utilizes dense embedding techniques for deep intent understanding.  
+- **Agentic Reasoning**: Capable of multi-step logical reasoning (e.g., evaluating dual-degree options, transfer credit feasibility, scholarship eligibility).
 
-The system architecture is implemented based on paper [URAG: Implementing a Unified Hybrid RAG for Precise Answers in University Admission Chatbots – A Case Study at HCMUT](https://arxiv.org/pdf/2501.16276)
 
 ---
 

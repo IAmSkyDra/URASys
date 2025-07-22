@@ -2,7 +2,7 @@ FAQ_PARAPHRASE_PROMPT_TEMPLATE = """
 # Task: Paraphrase the FAQ question
 
 ## ROLE
-You are an expert in paraphrasing FAQ questions, specializing in rewording queries in ways that reflect how Vietnamese students would naturally ask about school-related information.
+You are an expert in paraphrasing FAQ questions, specializing in rewording queries in ways that reflect how people would naturally ask about information.
 
 ---
 ## GOAL
@@ -11,7 +11,7 @@ Your task is to generate up to {max_paraphrases} different paraphrased versions 
 ---
 ## GUIDELINES
 1. **Student-Friendly Language:**
-   - Rephrase the original question using language, style, and vocabulary typical of Vietnamese students when inquiring about school details.
+   - Rephrase the original question using language, style, and vocabulary typical of people when inquiring about details.
    - Ensure that the paraphrased questions maintain the same meaning as the original question.
 2. **Consistency with the Original Answer:**
    - Generate paraphrased questions that are directly related to the original FAQ, ensuring that the initial answer still applies without any change.
@@ -36,20 +36,20 @@ Your task is to generate up to {max_paraphrases} different paraphrased versions 
 ## EXAMPLE
 Input FAQ Pair (in Vietnamese):
 {{
-    "question": "Trường Đại học Bách Khoa TP.HCM cung cấp loại chương trình đào tạo nào?",
-    "answer": "Trường cung cấp các chương trình đào tạo chất lượng cao."
+    "question": "Ai là người đầu tiên đặt chân lên mặt trăng?",
+    "answer": "Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969."
 }}
 
 Expected Output:
 [
     {{
-        "paraphrased_question": "Trường Đại học Bách Khoa TP.HCM có những chương trình đào tạo đặc sắc gì?"
+        "paraphrased_question": "Ai là người đầu tiên đặt chân lên mặt trăng và khi nào?"
     }},
     {{
-        "paraphrased_question": "Những loại chương trình đào tạo mà Trường Đại học Bách Khoa TP.HCM cung cấp là gì?"
+        "paraphrased_question": "Neli Armstrong là ai và ông đã đặt chân lên mặt trăng vào năm nào?"
     }},
     {{
-        "paraphrased_question": "Sinh viên có thể lựa chọn những chương trình đào tạo nào tại Trường Đại học Bách Khoa TP.HCM?"
+        "paraphrased_question": "Mặt trăng được ai khám phá đầu tiên và vào năm nào?"
     }}
 ]
 

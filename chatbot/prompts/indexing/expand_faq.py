@@ -35,19 +35,19 @@ Your task is to generate up to {max_new_faq_pairs} new FAQ pairs derived from th
 ## EXAMPLE
 Input FAQ Pair (in Vietnamese):
 {{
-    "question": "Trường Đại học Bách Khoa TP.HCM cung cấp loại chương trình đào tạo nào?",
-    "answer": "Trường cung cấp các chương trình đào tạo chất lượng cao."
+    "question": "Người đầu tiên đặt chân lên mặt trăng là ai?",
+    "answer": "Người đầu tiên đặt chân lên mặt trăng là Neil Armstrong."
 }}
 
 Expected Output:
 [
     {{
-        "question": "Các chương trình đào tạo của trường có đặc điểm nổi bật gì?",
-        "answer": "Các chương trình được thiết kế để cung cấp kiến thức chuyên môn sâu và kỹ năng thực tiễn, giúp sinh viên sẵn sàng cho thị trường lao động."
+        "question": "Năm nào Neil Armstrong đặt chân lên mặt trăng?",
+        "answer": "Neil Armstrong đặt chân lên mặt trăng vào năm 1969."
     }},
     {{
-        "question": "Trường áp dụng những chiến lược nào để đảm bảo chất lượng đào tạo?",
-        "answer": "Trường thường xuyên cải tiến chương trình giảng dạy, hợp tác với các doanh nghiệp và tổ chức nghiên cứu, và tập trung vào ứng dụng thực tiễn trong từng khóa học."
+        "question": "Cuộc đời của Neil Armstrong có những cột mốc quan trọng nào?",
+        "answer": "Neil Armstrong là một phi hành gia nổi tiếng, ông đã tham gia nhiều sứ mệnh không gian và có những đóng góp quan trọng cho ngành hàng không vũ trụ."
     }}
 ]
 

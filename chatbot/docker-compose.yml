@@ -7,8 +7,8 @@ services:
       context: .
       dockerfile: ./server/document_server/Dockerfile
       tags:
-        - "hcmut-chatbot/document-server:latest"
-    image: hcmut-chatbot/document-server:latest
+        - "uras/document-server:latest"
+    image: uras/document-server:latest
     ports:
       - "8001:8000"
     environment:
@@ -37,8 +37,8 @@ services:
       context: .
       dockerfile: ./server/faq_server/Dockerfile
       tags:
-        - "hcmut-chatbot/faq-server:latest"
-    image: hcmut-chatbot/faq-server:latest
+        - "uras/faq-server:latest"
+    image: uras/faq-server:latest
     ports:
       - "8002:8000"
     environment:
@@ -67,8 +67,8 @@ services:
       context: .
       dockerfile: ./server/index_server/Dockerfile
       tags:
-        - "hcmut-chatbot/index-server:latest"
-    image: hcmut-chatbot/index-server:latest
+        - "uras/index-server:latest"
+    image: uras/index-server:latest
     ports:
       - "8003:8000"
     environment:
@@ -97,13 +97,13 @@ services:
       context: .
       dockerfile: ./server/chatbot_server/Dockerfile
       tags:
-        - "hcmut-chatbot/chatbot-server:latest"
-    image: hcmut-chatbot/chatbot-server:latest
+        - "uras/chatbot-server:latest"
+    image: uras/chatbot-server:latest
     ports:
       - "8010:8010"
     environment:
       GOOGLE_API_KEY: ${GEMINI_API_KEY}
-    command: ["adk", "web", "--port", "8010", "--host", "0.0.0.0", "--reload"]
+    command: ["adk", "api_server", "--port", "8010", "--host", "0.0.0.0", "--reload"]
     depends_on:
       document-server:
         condition: service_healthy

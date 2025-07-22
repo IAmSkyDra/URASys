@@ -30,10 +30,10 @@ Your task is to generate a single-sentence title or quick description for the pr
 ---------------------
 ## EXAMPLE
 Rewritten Text Chunk (in Vietnamese):
-"Trường Đại học Bách Khoa TP.HCM, với uy tín hàng đầu về kỹ thuật và công nghệ, cung cấp nhiều chương trình đào tạo chuyên sâu, chất lượng và tiên tiến trong lĩnh vực kỹ thuật."
+"Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969. Ông là một phi hành gia nổi tiếng với những đóng góp quan trọng cho ngành hàng không vũ trụ."
 Expected Output:
 {{
-    "title_or_quick_description": "Chương trình đào tạo kỹ thuật tiên tiến tại Trường Đại học Bách Khoa TP.HCM."
+    "title_or_quick_description": "Neli Armstrong: Người đầu tiên đặt chân lên mặt trăng và những đóng góp cho ngành hàng không vũ trụ."
 }}
 
 ---------------------

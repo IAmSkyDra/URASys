@@ -56,19 +56,20 @@ class ChunkReconstructor:
         progress_bar = tqdm(chunks, desc="Reconstructing chunks")
         reconstructed_chunks = []
         for chunk in chunks:
-            # Step 1: Rewrite the chunk
-            rewritten_chunk = self.rewrite_chunk(chunk, context)
+            # # Step 1: Rewrite the chunk
+            # rewritten_chunk = self.rewrite_chunk(chunk, context)
 
-            # Step 2: Generate a title or quick description for the rewritten chunk
-            title = self.generate_title_quick_description(rewritten_chunk)
+            # # Step 2: Generate a title or quick description for the rewritten chunk
+            # title = self.generate_title_quick_description(rewritten_chunk)
 
-            # Step 3: Combine the title and chunk
-            title_and_chunk = self.combine_title_and_chunk(title, rewritten_chunk)
+            # # Step 3: Combine the title and chunk
+            # title_and_chunk = self.combine_title_and_chunk(title, rewritten_chunk)
 
             reconstructed_chunks.append(ReconstructedChunk(
                 id=str(uuid.uuid4()),
                 document=context.document,
-                chunk=title_and_chunk
+                # chunk=title_and_chunk
+                chunk=chunk
             ))
 
             # Update progress bar

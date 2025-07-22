@@ -41,7 +41,7 @@ rw_lock = Lock()
 
 mcp = FastMCP(
     name="Document Retrieval Server",
-    instructions="This is a server for retrieving relevant documents about HCMUT.",
+    instructions="This is a server for retrieving relevant documents based on user queries.",
     include_tags=["document"]
 )
 

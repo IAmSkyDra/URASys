@@ -34,16 +34,16 @@ Your task is to extract and generate up to {max_faq_pairs} FAQ pairs from the pr
 ---
 ## EXAMPLE
 Text Chunk (in Vietnamese):
-"Trường Đại học Bách Khoa TP.HCM cung cấp các chương trình đào tạo chất lượng cao cùng với những dự án nghiên cứu tiên tiến, tạo điều kiện cho sinh viên phát triển tối đa kỹ năng và kiến thức chuyên môn."
+"Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969. Ông là một phi hành gia nổi tiếng với những đóng góp quan trọng cho ngành hàng không vũ trụ."
 Expected Output:
 [
     {{
-        "question": "Trường Đại học Bách Khoa TP.HCM cung cấp loại chương trình đào tạo nào?",
-        "answer": "Trường cung cấp các chương trình đào tạo chất lượng cao."
+        "question": "Ai là người đầu tiên đặt chân lên mặt trăng?",
+        "answer": "Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969."
     }},
     {{
-        "question": "Những dự án nghiên cứu của trường có đặc điểm gì?",
-        "answer": "Trường thực hiện các dự án nghiên cứu tiên tiến giúp phát triển kỹ năng chuyên môn cho sinh viên."
+        "question": "Những đóng góp của Neli Armstrong cho ngành hàng không vũ trụ là gì?",
+        "answer": "Neli Armstrong là một phi hành gia nổi tiếng với những đóng góp quan trọng cho ngành hàng không vũ trụ."
     }}
 ]
 

@@ -6,7 +6,7 @@ You are a context extraction expert tasked with analyzing a Vietnamese document 
 
 ---
 ## GOAL
-Your task is to extract the main context from the provided Vietnamese text about Trường Đại học Bách Khoa TP.HCM (Ho Chi Minh City University of Technology). You should produce a detailed summary and a list of topics that cover all significant aspects of the document. The final output must be entirely in **Vietnamese** and limited to maximum {max_tokens} tokens.
+Your task is to extract the main context from the provided Vietnamese text. You should produce a detailed summary and a list of topics that cover all significant aspects of the document. The final output must be entirely in **Vietnamese** and limited to maximum {max_tokens} tokens.
 
 ---
 ## GUIDELINES
@@ -32,11 +32,11 @@ Your task is to extract the main context from the provided Vietnamese text about
 ---
 ## EXAMPLE
 Document (in Vietnamese): 
-"Trường Đại học Bách Khoa TP.HCM là một trong những trường đại học hàng đầu về kỹ thuật và công nghệ tại Việt Nam. Trường nổi tiếng với các chương trình đào tạo chất lượng, các nghiên cứu tiên tiến và sự hợp tác với các doanh nghiệp hàng đầu."
+"Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969. Ông là một phi hành gia nổi tiếng với những đóng góp quan trọng cho ngành hàng không vũ trụ."
 
 Expected Output:
 {{
-    "summary": "Trường Đại học Bách Khoa TP.HCM là một trường đại học hàng đầu về kỹ thuật và công nghệ, nổi tiếng với chương trình đào tạo chất lượng, nghiên cứu tiên tiến và hợp tác doanh nghiệp."
+    "summary": "Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969, đóng góp quan trọng cho ngành hàng không vũ trụ."
 }}
 
 ---

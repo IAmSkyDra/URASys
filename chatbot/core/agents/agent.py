@@ -84,7 +84,7 @@ def init_session_state(callback_context: CallbackContext) -> None:
 
 def create_agent() -> LlmAgent:
     """
-    Create the Manager LLM agent for orchestrating information retrieval about HCMUT.
+    Create the Manager LLM agent for orchestrating information retrieval.
     This agent breaks down requests, uses the search_information tool, and synthesizes results.
 
     Returns:
@@ -92,7 +92,7 @@ def create_agent() -> LlmAgent:
     """
     agent = LlmAgent(
         model="gemini-2.5-flash",
-        name="hcmut_information_manager",
+        name="information_manager",
         instruction=MANAGER_AGENT_INSTRUCTION_PROMPT.format(
             max_retries=MAX_RETRIES,
             current_attempt="{current_attempt}"
@@ -111,7 +111,7 @@ def create_agent() -> LlmAgent:
         ),
         planner=BuiltInPlanner(thinking_config=types.ThinkingConfig(
             include_thoughts=True,
-            thinking_budget=1000  # Set a reasonable thinking budget for the agent
+            thinking_budget=100  # Set a reasonable thinking budget for the agent
         ))
     )
     return agent

@@ -33,12 +33,12 @@ Your task is to rewrite the provided Vietnamese text chunk, ensuring that it ali
 ---
 ## EXAMPLE
 Text Chunk (in Vietnamese):
-"Trường có nhiều chương trình đào tạo chuyên sâu trong lĩnh vực kỹ thuật."
+"Neli Armstrong là người đầu tiên đặt chân lên mặt trăng vào năm 1969. Ông là một phi hành gia nổi tiếng với những đóng góp quan trọng cho ngành hàng không vũ trụ."
 Summarized Context (in Vietnamese):
-"Trường Đại học Bách Khoa TP.HCM là một trong những trường đại học hàng đầu về kỹ thuật và công nghệ, nổi tiếng với chương trình đào tạo chất lượng và nghiên cứu tiên tiến."
+"Neli Armstrong là một phi hành gia nổi tiếng, ông đã tham gia nhiều sứ mệnh không gian và có những đóng góp quan trọng cho ngành hàng không vũ trụ."
 Expected Output (assuming {max_tokens} is sufficient for this length):
 {{
-    "rewritten_chunk": "Trường Đại học Bách Khoa TP.HCM, với uy tín hàng đầu về kỹ thuật và công nghệ, cung cấp nhiều chương trình đào tạo chuyên sâu, chất lượng và tiên tiến trong lĩnh vực kỹ thuật."
+    "rewritten_chunk": "Neli Armstrong, với vai trò là người đầu tiên đặt chân lên mặt trăng vào năm 1969, đã có những đóng góp quan trọng cho ngành hàng không vũ trụ, tham gia nhiều sứ mệnh không gian đáng chú ý."
 }}
 
 ---

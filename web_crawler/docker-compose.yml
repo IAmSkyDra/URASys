@@ -7,8 +7,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
       tags:
-        - "hcmut-chatbot/web-crawler-server:latest"
-    image: hcmut-chatbot/web-crawler-server:latest
+        - "uras/web-crawler-server:latest"
+    image: uras/web-crawler-server:latest
     ports:
       - "8005:8000"
     environment:

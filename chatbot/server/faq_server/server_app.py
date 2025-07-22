@@ -40,7 +40,7 @@ rw_lock = Lock()
 
 mcp = FastMCP(
     name="FAQ Retrieval Server",
-    instructions="This is a server for retrieving relevant FAQs about HCMUT.",
+    instructions="This is a server for retrieving relevant FAQs based on user queries.",
     include_tags=["faq"]
 )
 

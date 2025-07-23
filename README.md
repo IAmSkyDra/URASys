@@ -42,7 +42,7 @@ The following steps will help you to get the system up and running:
     - Upload document data in TXT format
     - Or you can upload data from web URLs directly
 - Access the chatbot interface at [http://localhost:8010](http://localhost:8010):
-    ![Chatbot Interface](./media/web_ui.png)
+    ![Chatbot Interface](./media/web_ui_v2.png)
 ---
 
 We hope you enjoy exploring our project! If you have questions, feel free to open an issue or contribute to this repository. 😊 

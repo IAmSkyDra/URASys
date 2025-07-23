@@ -1,5 +1,5 @@
 # URASys
-Welcome to the official repository for **URASys**.
+Welcome to the official repository for **URASys: A Unified-Retrieval Agent-Based System for Clarification-Driven Educational Question Answering**.
 
 ---
 

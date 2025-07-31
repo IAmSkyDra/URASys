@@ -30,16 +30,16 @@ To ensure consistency, each dataset is distributed in a unified CSV format with 
 
 The `*_ambious.csv` files are not direct subsets but are generated to probe model performance on underspecified inputs. The pipeline:
 
-1. **Source Selection:** Start from the base QA dataset (e.g., SQuAD 2.0, ViQuAD 2.0).  
-2. **Ambiguity Generation:**  
+**1.** **Source Selection:** Start from the base QA dataset (e.g., SQuAD 2.0, ViQuAD 2.0).  
+**2.** **Ambiguity Generation:**  
    - Use a language model to mask or alter the original question according to three ambiguity types:
      - `missing_context`: Remove key constraints (time, entity, scope).
      - `multiple_interpretations`: Create questions interpretable in multiple valid ways.
      - `generalization`: Overly broaden the query beyond the source context.  
-3. **Validation:**  
+**3.** **Validation:**  
    - Automatically verify that the new question cannot be fully answered using the paragraph alone.
    - Annotate critical `info` fields required to disambiguate.  
-4. **Manual Spot-Check:** Random samples are human-reviewed for quality assurance.
+**4.** **Manual Spot-Check:** Random samples are human-reviewed for quality assurance.
 
 Each ambiguous record contains:
 - `question`: The underspecified or ambiguous version of the query.

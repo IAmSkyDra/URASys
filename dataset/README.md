@@ -24,7 +24,7 @@ VIMQA is a Vietnamese multi-hop QA dataset introduced at LREC 2022 with over 15,
   *For public datasets, we sample 1,000 test-set examples per dataset. For SQuAD 2.0 and UIT-ViQuAD 2.0, the sampling process guarantees inclusion of the unanswerable subsets.*
 
 - **UniQA**  
-  Proprietary, institution-specific QA dataset covering university-related questions, with both answerable and unanswerable cases. Only a 2-sample preview is available during peer review; the full release follows paper acceptance.
+UniQA is a custom dataset of real-world Vietnamese student queries on university admissions. Each question links to official academic documents, reflecting URASys’s target deployment scenario. Only a 2-sample preview is available during peer review; the full release follows paper acceptance.
 
 ## Ambiguity Subset Construction
 
@@ -91,7 +91,7 @@ Each ambiguous record contains:
 
 ## JSON Examples
 
-### Answerable
+**Answerable:** direct, well-specified question.
 ```json
 {
   "question": "Beyonce did an interview with which magazine and was asked about feminism?",
@@ -100,7 +100,7 @@ Each ambiguous record contains:
 }
 ```
 
-### Unanswerable
+**Unanswerable:** questions with multiple interpretations, insufficient context, or overly broad scope.
 ```json
 {
   "question": "Which Nigerian author did Beyonce collaborate with for a TEDx speech sample?",
@@ -109,7 +109,7 @@ Each ambiguous record contains:
 }
 ```
 
-### Ambiguous
+**Ambiguous:** specific query with no matching information in the database `info` contains a list of clarifying details the model should request.
 ```json
 {
   "question": "Which campaign promoting female empowerment did she support?",

@@ -6,16 +6,16 @@ To support reproducible research, each dataset follows a consistent format and i
 
 ## Dataset Descriptions
 
-- **SQuAD 2.0**[1]  
+- **SQuAD 2.0** [1]  
   An English QA dataset combining 100,000+ answerable questions with over 50,000 unanswerable ones. The benchmark challenges models to identify when no answer is available in the context.
 
-- **UIT-ViQuAD 2.0**[2]  
+- **UIT-ViQuAD 2.0** [2]  
   A Vietnamese adaptation of SQuAD 2.0, released in the VLSP 2021 Challenge. It includes both answerable and unanswerable questions, with careful linguistic alignment to Vietnamese syntax and semantics.
 
-- **HotpotQA**[3]  
+- **HotpotQA** [3]  
   A large-scale English multi-hop QA dataset requiring reasoning across multiple supporting passages. Designed to test explainability and fact synthesis in open-domain QA.
 
-- **VIMQA**[4]  
+- **VIMQA** [4]  
   A Vietnamese dataset focused on advanced reasoning and explainable multi-hop QA, presented at LREC 2022. It supports complex reasoning chains and document-level context linking.
 
 - **UniQA**  

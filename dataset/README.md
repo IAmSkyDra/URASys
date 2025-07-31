@@ -47,7 +47,9 @@ The `*_ambious.csv` files are not direct subsets but are generated to probe mode
 Each ambiguous record contains:
 - `question`: The underspecified or ambiguous version of the query.
 - `answer`: The correct answer to the original question.
+- `paragraph`: The source context passage used for answering or verifying the question.
 - `info`: A JSON list of missing information the model should request to clarify.
+
 
 ## Dataset Variants and Format
 

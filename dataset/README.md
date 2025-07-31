@@ -55,9 +55,9 @@ Each ambiguous record contains:
 
 | Variant         | File Pattern           | Fields                                                       |
 |-----------------|------------------------|--------------------------------------------------------------|
-| Standard        | `*_1000.csv`           | `question`, `answer`, `paragraph`                           |
+| Standard (answerable and unanswerable)        | `*_1000.csv`           | `question`, `answer`, `paragraph`                           |
 | Ambiguous       | `*_ambious.csv`        | `question`, `answer`, `paragraph`, `info`                   |
-| UniQA (hidden)  | `UniQA_*.csv`          | `question`, `answer` (+ `info` for ambiguous); only 2 rows visible |
+| UniQA (hidden)  | `UniQA_*.csv`          | `question`, `answer`, `paragraph`, `info`; only 2 rows visible |
 
 > For UniQA, all rows beyond the first two are anonymized with a placeholder message.
 

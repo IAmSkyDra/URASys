@@ -1,6 +1,6 @@
 # QA Dataset Collection for Benchmarking Answerability and Ambiguity
 
-This repository provides a curated suite of Question Answering (QA) datasets designed to evaluate models under diverse conditions: distinguishing answerable vs. unanswerable queries, handling ambiguity, and performing multi-hop reasoning. The collection spans both English and Vietnamese resources and is standardized to facilitate reproducible benchmarking.
+We present a curated suite of Question Answering (QA) datasets specifically designed for evaluating model performance under challenging conditions: distinguishing answerable versus unanswerable queries, handling underspecified or ambiguous inputs, and performing multi-hop reasoning. The collection spans both English and Vietnamese resources and is standardized for reproducible benchmarking across systems.
 
 To ensure consistency, each dataset is distributed in a unified CSV format with two main variants:
 

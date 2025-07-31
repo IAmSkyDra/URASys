@@ -1,47 +1,70 @@
 # QA Dataset Collection for Benchmarking Answerability and Ambiguity
 
-This repository contains a curated collection of question answering (QA) datasets used for evaluating model performance under various conditions, including answerability, ambiguity, and multi-hop reasoning. The datasets span both English and Vietnamese and are standardized for comparative benchmarking.
+This repository provides a curated suite of Question Answering (QA) datasets designed to evaluate models under diverse conditions: distinguishing answerable vs. unanswerable queries, handling ambiguity, and performing multi-hop reasoning. The collection spans both English and Vietnamese resources and is standardized to facilitate reproducible benchmarking.
 
-To support reproducible research, each dataset follows a consistent format and is released in two variants: full QA sets (`*_1000.csv`) and ambiguity-focused subsets (`*_ambious.csv`).
+To ensure consistency, each dataset is distributed in a unified CSV format with two main variants:
+
+- **Standard QA sets (`*_1000.csv`)**: Balanced subsets for general answerability evaluation.
+- **Ambiguity-focused subsets (`*_ambious.csv`)**: Specifically curated to test model behavior on underspecified or multi-interpretation queries.
 
 ## Dataset Descriptions
 
 - **SQuAD 2.0** [1]  
-  An English QA dataset combining 100,000+ answerable questions with over 50,000 unanswerable ones. The benchmark challenges models to identify when no answer is available in the context.
+  English extractive QA dataset containing 100k+ answerable and 50k+ unanswerable questions. It is a benchmark for detecting when context does not support any answer.
 
 - **UIT-ViQuAD 2.0** [2]  
-  A Vietnamese adaptation of SQuAD 2.0, released in the VLSP 2021 Challenge. It includes both answerable and unanswerable questions, with careful linguistic alignment to Vietnamese syntax and semantics.
+  Vietnamese adaptation of SQuAD 2.0, released for the VLSP 2021 Challenge. Questions are linguistically aligned to Vietnamese syntax and include both answerable and unanswerable cases.
 
 - **HotpotQA** [3]  
-  A large-scale English multi-hop QA dataset requiring reasoning across multiple supporting passages. Designed to test explainability and fact synthesis in open-domain QA.
+  Large-scale English multi-hop QA dataset requiring reasoning over multiple passages, emphasizing explainability and evidence synthesis.
 
 - **VIMQA** [4]  
-  A Vietnamese dataset focused on advanced reasoning and explainable multi-hop QA, presented at LREC 2022. It supports complex reasoning chains and document-level context linking.
+  Vietnamese multi-hop dataset designed for explainable reasoning and document-level context linking. Presented at LREC 2022.
+
+  *For public datasets, we sample 1,000 test-set examples per dataset. For SQuAD 2.0 and UIT-ViQuAD 2.0, the sampling process guarantees inclusion of the unanswerable subsets.*
 
 - **UniQA**  
-  A proprietary, institution-specific QA dataset comprising both answerable and unanswerable questions derived from domain-specific sources (e.g., university-related FAQs). To preserve anonymity during peer review, only a 2-question preview is publicly available. Full release will follow paper acceptance.
+  Proprietary, institution-specific QA dataset covering university-related questions, with both answerable and unanswerable cases. Only a 2-sample preview is available during peer review; the full release follows paper acceptance.
+
+## Ambiguity Subset Construction
+
+The `*_ambious.csv` files are not direct subsets but are generated to probe model performance on underspecified inputs. The pipeline:
+
+1. **Source Selection:** Start from the base QA dataset (e.g., SQuAD 2.0, ViQuAD 2.0).  
+2. **Ambiguity Generation:**  
+   - Use a language model to mask or alter the original question according to three ambiguity types:
+     - `missing_context`: Remove key constraints (time, entity, scope).
+     - `multiple_interpretations`: Create questions interpretable in multiple valid ways.
+     - `generalization`: Overly broaden the query beyond the source context.  
+3. **Validation:**  
+   - Automatically verify that the new question cannot be fully answered using the paragraph alone.
+   - Annotate critical `info` fields required to disambiguate.  
+4. **Manual Spot-Check:** Random samples are human-reviewed for quality assurance.
+
+Each ambiguous record contains:
+- `question`: The underspecified or ambiguous version of the query.
+- `answer`: The correct answer to the original question.
+- `info`: A JSON list of missing information the model should request to clarify.
 
 ## Dataset Variants and Format
-
-Each dataset is provided in two variants:
 
 | Variant         | File Pattern           | Fields                                                       |
 |-----------------|------------------------|--------------------------------------------------------------|
 | Standard        | `*_1000.csv`           | `question`, `answer`, `paragraph`                           |
 | Ambiguous       | `*_ambious.csv`        | `question`, `answer`, `paragraph`, `info`                   |
-| UniQA (hidden)  | `UniQA_*.csv`          | - `1000`: `question`, `answer`<br>- `ambious`: `question`, `answer`, `info` (only 2 visible examples) |
+| UniQA (hidden)  | `UniQA_*.csv`          | `question`, `answer` (+ `info` for ambiguous); only 2 rows visible |
 
-> In UniQA files, remaining rows beyond the first 2 are replaced with an anonymization notice.
+> For UniQA, all rows beyond the first two are anonymized with a placeholder message.
 
 ## Dataset Statistics
 
-| Dataset            | Answerable Questions | Unanswerable Questions | Ambiguous Questions |
-|--------------------|----------------------|------------------------|---------------------|
-| SQuAD 2.0          | 508                  | 492                    | 418                 |
-| UIT-ViQuAD 2.0     | 800                  | 200                    | 731                 |
-| HotpotQA           | 1000                 | 0                      | 0                   |
-| VIMQA              | 1000                 | 0                      | 0                   |
-| UniQA              | 500                  | 500                    | 314                 |
+| Dataset            | Answerable | Unanswerable | Ambiguous |
+|--------------------|------------|--------------|-----------|
+| SQuAD 2.0          | 508        | 492          | 418       |
+| UIT-ViQuAD 2.0     | 800        | 200          | 731       |
+| HotpotQA           | 1000       | 0            | 0         |
+| VIMQA              | 1000       | 0            | 0         |
+| UniQA              | 500        | 500          | 314       |
 
 ## File List
 
@@ -56,10 +79,40 @@ Each dataset is provided in two variants:
 
 ## Field Definitions
 
-- `question`: The input query posed to the QA system.
+- `question`: The query posed to the QA system.
 - `answer`: Ground truth answer string.
-- `paragraph`: Source context that supports or fails to support the answer.
-- `info`: (In ambiguous files) Explanation of ambiguity or disambiguation rationale.
+- `paragraph`: Supporting or non-supporting context.
+- `info`: *(Ambiguous sets only)* Required disambiguation cues as a JSON list.
+
+## JSON Examples
+
+### Answerable
+```json
+{
+  "question": "Beyonce did an interview with which magazine and was asked about feminism?",
+  "answer": "Vogue",
+  "paragraph": "In an interview published by Vogue in April 2013, Beyoncé was asked if she considers herself a feminist..."
+}
+```
+
+### Unanswerable
+```json
+{
+  "question": "Which Nigerian author did Beyonce collaborate with for a TEDx speech sample?",
+  "answer": "No answer",
+  "paragraph": "In an interview published by Vogue in April 2013, Beyoncé was asked if she considers herself a feminist..."
+}
+```
+
+### Ambiguous
+```json
+{
+  "question": "Which campaign promoting female empowerment did she support?",
+  "info": ["Which artist is being referred to", "Whether the campaign is music-related or social"],
+  "answer": "Ban Bossy campaign",
+  "paragraph": "In an interview published by Vogue in April 2013, Beyoncé was asked if she considers herself a feminist... She has also contributed to the Ban Bossy campaign..."
+}
+```
 
 ## Example Usage
 
@@ -72,11 +125,10 @@ print(df[['question', 'answer', 'info']].head())
 
 ## License and Release Policy
 
-- Datasets derived from public sources follow their original licenses.
-- The UniQA dataset is institution-specific and will be made available for research upon official acceptance of the associated publication.
-
+- Public datasets respect their original licenses.
+- UniQA is institution-specific and released for research use after paper acceptance.
+  
 ## References
-
 [1] Pranav Rajpurkar, Robin Jia, and Percy Liang. 2018. Know What You Don’t Know: Unanswerable Questions for SQuAD. In *Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)*, pages 784–789, Melbourne, Australia. Association for Computational Linguistics.
 
 [2] Kiet Nguyen, Son Quoc Tran, Luan Thanh Nguyen, Tin Van Huynh, Son Thanh Luu, and Ngan Luu-Thuy Nguyen. 2022. VLSP 2021 – ViMRC Challenge: Vietnamese Machine Reading Comprehension. *VNU Journal of Science: Computer Science and Communication Engineering*, 38(2).

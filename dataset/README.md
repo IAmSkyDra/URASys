@@ -10,16 +10,16 @@ To ensure consistency, each dataset is distributed in a unified CSV format with 
 ## Dataset Descriptions
 
 - **SQuAD 2.0** [1]  
-  English extractive QA dataset containing 100k+ answerable and 50k+ unanswerable questions. It is a benchmark for detecting when context does not support any answer.
-
+SQuAD 2.0 is an English extractive QA dataset combining over 100,000 answerable and 50,000 unanswerable questions. It extends the original Stanford Question Answering Dataset by introducing adversarially crafted unanswerable queries that are contextually relevant but lack an answer in the passage. This design tests a model’s ability to balance span extraction with robust answerability detection, making SQuAD 2.0 a primary benchmark for English QA research.
+  
 - **UIT-ViQuAD 2.0** [2]  
-  Vietnamese adaptation of SQuAD 2.0, released for the VLSP 2021 Challenge. Questions are linguistically aligned to Vietnamese syntax and include both answerable and unanswerable cases.
+UIT-ViQuAD 2.0 is a Vietnamese adaptation of SQuAD 2.0, developed for the VLSP 2021 Challenge. It contains over 23,000 questions aligned with Vietnamese syntax and linguistic characteristics, including both answerable and unanswerable cases. The dataset was created to advance Vietnamese NLP research and evaluate QA models’ ability to handle language-specific challenges such as tonal ambiguity and word segmentation.
 
 - **HotpotQA** [3]  
-  Large-scale English multi-hop QA dataset requiring reasoning over multiple passages, emphasizing explainability and evidence synthesis.
+HotpotQA is a large-scale English multi-hop extractive QA dataset with more than 113,000 question–answer pairs. Each question is designed to require reasoning over multiple passages and is annotated with supporting facts that enable evidence-based explanations. HotpotQA is widely used for training and benchmarking explainable QA systems and supports both a distractor setting with curated passages and a full-wiki retrieval setting.
 
 - **VIMQA** [4]  
-  Vietnamese multi-hop dataset designed for explainable reasoning and document-level context linking. Presented at LREC 2022.
+VIMQA is a Vietnamese multi-hop QA dataset introduced at LREC 2022 with over 15,000 question–answer pairs. It focuses on explainable reasoning and document-level context linking in Vietnamese, providing supporting facts for each answer to encourage transparency. VIMQA addresses the lack of multi-hop resources for low-resource languages and serves as a benchmark for explainable QA in Vietnamese.
 
   *For public datasets, we sample 1,000 test-set examples per dataset. For SQuAD 2.0 and UIT-ViQuAD 2.0, the sampling process guarantees inclusion of the unanswerable subsets.*
 
